@@ -4,7 +4,7 @@
  * _strchr - main function
  * @s: Function parameter
  * @c: Function parameter
- * Return: NULL
+ * Return: 0
 */
 
 char *_strchr(char *s, char c)
@@ -16,5 +16,5 @@ char *_strchr(char *s, char c)
 	if (s[i] == c)
 	return (s + i);
 	}
-	return (NULL);
+	return (0);
 }
