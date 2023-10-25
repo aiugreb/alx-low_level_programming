@@ -6,6 +6,7 @@
  * @i: square root
  * Return: the result of the square root
 */
+
 int square_recursion(int n, int i);
 int _sqrt_recursion(int n)
 {
@@ -31,5 +32,5 @@ int square_recursion(int n, int i)
 	{
 		return (i);
 	}
-	return (square_recursion(n, i + 1))
+	return (square_recursion(n, i + 1));
 }
