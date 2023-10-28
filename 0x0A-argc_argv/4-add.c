@@ -1,10 +1,10 @@
-#include <stdio>
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
  * main - print the name of the program.
  * @argc: the number of arguments
- * @argv: array of pointers to argements
+ * @argv: array of pointers to arguments
  * Return: always (0).
 */
 
