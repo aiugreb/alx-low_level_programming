@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdlib.h>
 /**
  * *create_array - that creates an array of chars
  * and initialzes it with a specific char.
@@ -16,7 +16,6 @@ char *create_array(unsigned int size, char c)
 	{
 		return (0);
 	}
-
 	while (size--)
 	{
 		n[size] = c;
