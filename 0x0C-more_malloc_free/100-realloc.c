@@ -1,56 +1,49 @@
 #include "main.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
 /**
- * simple_print_buffer - prints buffer
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
- * Return: Nothing.
- */
-
-void simple_print_buffer(char *buffer, unsigned int size)
-{
-	unsigned int i;
-
-	i = 0;
-
-	while (i < size)
-	{
-		if (i % 10)
-		{
-			printf(" ");
-		}
-		if (!(i % 10) && i)
-		{
-			printf("\n");
-		}
-		printf("0x%02x", buffer[i]);
-		i++;
-	}
-	printf("\n");
-}
-
-/**
- * main - check the code for
- * Return: Always 0.
+ * *_realloc - reallocates a memory block using malloc and free
+ * @ptr: pointer
+ * @old_size: size of the allocated memory
+ * @new_size: new size of the new memory block
+ * Return: pointer to the newly allocated memory block
 */
 
-int main(void)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *p;
-	int i;
+	char *point;
+	char *alloc;
+	unsigned int i;
 
-	p = malloc(sizeof(char) * 10);
-	p = _realloc(p, sizeof(char) * 10, sizeof(char) * 98);
-	i = 0;
+	if (new_size == old_size)
+		return (ptr);
 
-	while (i < 98)
+	if (new_size == 0 && ptr)
 	{
-		p[i++] = 98;
+		free(ptr);
+		return (NULL);
 	}
-	simple_print_buffer(p, 98);
-	free(p);
-	return (0);
+
+	if (!ptr)
+		return (malloc(new_size));
+
+	point = malloc(new_size);
+	if (!point)
+		return (NULL);
+
+	alloc = ptr;
+
+	if (new_size < old_size)
+	{
+		for (i = 0; i < new_size; i++)
+			point[i] = alloc[i];
+	}
+
+	if (new_size > old_size)
+	{
+		for (i = 0; i < old_size; i++)
+			point[i] = alloc[i];
+	}
+
+	free(ptr);
+	return (point);
 }
