@@ -4,7 +4,7 @@
  * int_index - return index place
  * @array: array
  * @size: the array size
- * cmp: the compare function
+ * @cmp: the compare function
  * Return: the integer index
  */
 
