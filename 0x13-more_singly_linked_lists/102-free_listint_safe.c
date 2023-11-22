@@ -24,13 +24,13 @@ size_t free_listint_safe(listint_t **h)
 			node = (*h)->next;
 			free(*h);
 			*h = node;
-			len++;
+			i++;
 		}
 		else
 		{
 			free(*h);
 			*h = NULL;
-			len++;
+			i++;
 			break;
 		}
 	}
