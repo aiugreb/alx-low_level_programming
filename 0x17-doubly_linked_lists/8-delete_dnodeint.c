@@ -3,13 +3,14 @@
 /**
  * delete_dnodeint_at_index - deletes
  * deletes the node at index
- * @head: head of double list
- * @index: index where to insert
+ * @head: head of the list
+ * @index: index of the new node
  * Return: 1 if it succeeded, -1 if it failed
  */
+
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *nav, *before, *deleted;
+	dlistint_t *nav, *before, *delete;
 	unsigned int i = 0;
 
 	if (!head || !*head)
@@ -25,14 +26,14 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	while (nav)
 	{
 		if (i == index)
-			deleted = nav;
+			delete = nav;
 		if (i == index - 1)
 			before = nav;
 		if (i == index + 1)
 		{
 			before->next = nav;
 			nav->prev = before;
-			free(deleted);
+			free(delete);
 			return (1);
 		}
 		if (nav->next == NULL && i == index)
