@@ -49,6 +49,6 @@ int main(int argc, char **argv)
 	p[5] = l[(temp ^ 229) & 63];
 
 	p[6] = '\0';
-	printf("%s", pass);
+	printf("%s", p);
 	return (0);
 }
