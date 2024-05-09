@@ -4,23 +4,21 @@
 #include <stddef.h>
 
 /**
- * struct listint_s - Singly linked list.
- * @n: Integer stored at the node.
- * @index: Index of the node in the list.
- * @next: Pointer to the next node.
+ * struct listint_s - singly linked list
  *
- * Description: Singly linked list node structure.
+ * @n: Integer
+ * @index: Index of the node in the list
+ * @next: Pointer to the next node
+ *
+ * Description: singly linked list node structure
  */
-
 typedef struct listint_s
 {
-	/* Integer stored at the node. */
-	int n;
-	/* Index of the node in the list. */
-	size_t index;
-	/* Pointer to the next node. */
-	struct listint_s *next;
+    int n;
+    size_t index;
+    struct listint_s *next;
 } listint_t;
+
 
 /**
  * struct skiplist_s - Singly linked list with an express lane.
@@ -53,3 +51,4 @@ listint_t *jump_list(listint_t *list, size_t size, int value);
 skiplist_t *linear_skip(skiplist_t *list, int value);
 
 #endif
+
